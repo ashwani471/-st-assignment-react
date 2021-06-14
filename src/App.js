@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const App=()=>{
+  const [number, setNumber]=useState(0);
+   
+const increament=()=>{
+setNumber(number+1);
+};
+
+const decreament=()=>{
+  if(number>0){
+  setNumber(number-1);
+}else{
+  setNumber(0);
+}
+}
+  return(
+    <>
+    <div className="main-div">
+    <div className="inner-div">
+      <h1 className="NUmber">{number}</h1>
+      <br />
+      <button className="Increament" onClick={increament}>Inc</button>
+      <button className="Decreament" onClick={decreament}>Dec</button>
     </div>
+    </div>
+    </>
   );
 }
 
